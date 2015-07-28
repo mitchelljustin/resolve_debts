@@ -1,0 +1,15 @@
+noam:
+  emilee:     40.00
+
+mitch:
+  emilee:     20.00
+  noam:       40.00
+
+emilee:
+  rahul:      10.00
+  noam:       60.00
+  mitch:      10.00
+
+rahul:
+  mitch:      30.00
+  emilee:     30.00
