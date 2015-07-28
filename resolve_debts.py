@@ -51,8 +51,10 @@ def cli(
         yml_file = stdin
     ledger = yaml.load(yml_file)
     resolved_graph = resolve_debt(ledger)
-    pos = nx.spring_layout(resolved_graph)
+    for u, v, data in resolved_graph.edges_iter(data=True):
+        print("{} -> {}: {}".format(u, v, data['amount']))
     if draw:
+        pos = nx.spring_layout(resolved_graph)
         nx.draw(
             resolved_graph,
             pos=pos,
