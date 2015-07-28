@@ -1,0 +1,339 @@
+Alex: {Alice: 12.54, Allen: 23.3, Bessie: 59.65, Burton: 22.47, Dale: 51.34, Earlene: 50.45,
+  Ernestine: 69.56, Frances: 82.78, Gretchen: 17.18, Harold: 47.69, James: 25.91,
+  Jess: 32.24, Jessie: 33.85, Joe: 14.56, Julie: 84.95, Linda: 40.81, Mark: 65.8,
+  Michele: 86.46, Sarah: 84.68, Sherry: 19.75, Suzanna: 99.83, Todd: 14.35, Willie: 88.56,
+  Xavier: 59.8}
+Alice: {Alice: 87.11, Barbara: 35.45, Bessie: 27.79, Christia: 21.87, Constance: 82.55,
+  Daniel: 30.43, Edwin: 94.15, Ernestine: 30.94, Julie: 43.63, Kathryn: 25.21, Larry: 96.93,
+  Lillian: 46.21, Mae: 83.3, Mary: 16.9, Nicholas: 19.96, Rebecca: 58.95, Richard: 77.73,
+  Ronald: 45.84, Rose: 34.72, Ryan: 48.05, Salvador: 83.61, Sherry: 90.37}
+Alison: {Christia: 84.35, Daniel: 64.8, Jack: 11.63, Joe: 75.55, Julie: 59.12, Kathryn: 92.34,
+  Larry: 43.27, Mae: 26.98, Marie: 79.83, Neil: 88.89, Patricia: 22.35, Richard: 13.15,
+  Rickey: 87.21, Ryan: 30.57, Samuel: 28.97, Sarah: 64.41, Suzanna: 90.79, Todd: 27.49}
+Allen: {Christia: 92.11, Dale: 45.51, Daniel: 53.12, Diana: 88.26, Doris: 73.77, Edwin: 35.6,
+  Grace: 43.98, Helen: 41.99, Jack: 88.82, Janet: 47.49, Jill: 33.87, Kelly: 24.93,
+  Lauri: 15.02, Mae: 99.07, Nicholas: 93.99, Ronald: 73.61, Sheila: 12.04, Sherry: 32.23,
+  William: 45.01}
+Ann: {Barbara: 53.52, Christia: 26.8, Christine: 59.37, Cornell: 84.21, Dale: 10.86,
+  Dennis: 83.24, Frances: 71.84, Janet: 10.32, Julie: 92.45, Kelly: 73.01, Larry: 48.1,
+  Leona: 93.29, Mark: 51.87, Michael: 32.99, Rebecca: 35.72, Robert: 20.94, Sherry: 42.72,
+  Suzanna: 62.81, Todd: 62.95}
+Anna: {Anna: 79.32, Edwin: 20.44, Emma: 70.17, Julie: 54.74, Kelly: 87.59, Mae: 68.6,
+  Michael: 15.67, Nathan: 27.42, Richard: 19.57, Robin: 90.06, Ronald: 96.14, Rose: 49.11,
+  Sarah: 26.74}
+Arthur: {Alice: 83.97, Allen: 89.81, Earlene: 93.56, Harold: 53.39, Hubert: 55.18,
+  Jess: 22.1, Jessie: 43.87, Joel: 86.71, John: 17.61, Julie: 70.54, Kevin: 32.19,
+  Larry: 54.24, Leona: 55.82, Marcus: 33.02, Michele: 40.57, Neil: 52.52, Richard: 64.42,
+  Rosa: 27.26, Ryan: 80.95, Salvador: 77.18, Sarah: 76.93, Sheila: 46.91, Stephen: 10.93,
+  Willie: 25.67}
+Barbara: {Allen: 68.39, Ann: 16.05, Bessie: 32.4, Daniel: 55.53, David: 32.63, Diana: 28.9,
+  Edwin: 59.91, Emma: 75.82, Esther: 96.7, Grace: 34.5, Helen: 51.49, Jack: 40.62,
+  Joseph: 23.93, Josh: 70.61, Kelly: 47.85, Lillian: 49.5, Linda: 67.25, Mae: 25.53,
+  Marcus: 23.08, Michele: 76.06, Nathan: 46.98, Neil: 26.65, Rickey: 33.39, Ronald: 75.03,
+  Sherry: 70.56, Stephen: 43.69, Todd: 85.54}
+Bessie: {Alex: 13.18, Alice: 15.61, Arthur: 43.74, Constance: 91.24, Cornell: 10.12,
+  Daniel: 51.13, Earlene: 41.19, Ernestine: 99.6, Julie: 99.17, Kevin: 57.88, Lillian: 34.22,
+  Linda: 48.49, Marcus: 94.45, Mary: 19.87, Patricia: 95.83, Randy: 56.93, Robin: 31.09,
+  Ryan: 71.2, Sandra: 56.27, Sarah: 24.0, Sherry: 80.9}
+Burton: {Alex: 17.63, Burton: 82.54, Constance: 19.35, Dale: 18.08, Daniel: 86.21,
+  Ernestine: 58.96, Esther: 76.92, Frances: 53.04, Helen: 97.18, Jack: 52.34, Jill: 25.19,
+  John: 56.63, Kelly: 54.05, Larry: 62.71, Linda: 97.58, Nathan: 48.21, Neil: 35.12,
+  Ronald: 20.75, Rosa: 44.49, Sarah: 65.6, Sherry: 66.27, Willie: 56.06}
+Christia: {Arthur: 13.47, David: 99.35, Emma: 91.77, Gretchen: 21.09, Helen: 88.33,
+  Hubert: 79.41, Jessie: 44.11, Linda: 17.8, Mark: 58.9, Nicholas: 34.13, Robert: 59.19,
+  Robin: 68.16, Salvador: 68.82, Sheila: 98.53, Stephen: 80.56, Willie: 63.69}
+Christine: {Alex: 97.99, Ann: 85.23, Burton: 31.95, Constance: 79.94, Cornell: 65.38,
+  Ernestine: 68.78, Jess: 94.58, Jessie: 41.33, Jill: 63.34, Josh: 56.86, Kathryn: 99.75,
+  Lauri: 60.96, Lillian: 49.92, Lorene: 77.41, Michael: 55.16, Ronald: 55.39, Sandra: 60.42,
+  Sarah: 45.61}
+Constance: {Alison: 49.49, Dennis: 50.55, Doris: 66.29, Earlene: 78.37, Gretchen: 14.85,
+  Jack: 82.49, Josh: 22.9, Leona: 92.72, Michele: 21.39, Nicholas: 21.84, Richard: 83.93,
+  Robin: 85.9, Rosa: 12.44, Sandra: 80.55, Sheila: 64.1, Todd: 33.55}
+Cornell: {Barbara: 70.5, Bessie: 80.16, Constance: 71.75, Dale: 95.99, Jack: 69.34,
+  Josh: 72.57, Julie: 87.94, Lorene: 79.59, Nathan: 95.27, Robin: 80.06, Ronald: 42.12,
+  Rosa: 17.2, Samuel: 76.18, Sheila: 55.69, Xavier: 89.49}
+Dale: {Alex: 68.31, Alice: 88.28, Alison: 80.69, Barbara: 19.77, Burton: 34.98, Christine: 46.55,
+  Ernestine: 95.08, Esther: 30.33, Frances: 47.66, Grace: 69.69, Harold: 48.18, John: 10.1,
+  Joseph: 95.0, Julie: 36.47, Kevin: 83.67, Larry: 54.04, Mae: 49.44, Marie: 61.92,
+  Patricia: 65.33, Salvador: 26.77, Stephen: 33.7, William: 67.86}
+Daniel: {Anna: 28.07, Daniel: 55.1, David: 50.52, Dennis: 70.17, Frances: 86.89, Janet: 96.33,
+  Joel: 25.38, Joseph: 78.32, Josh: 52.01, Kathryn: 38.96, Kevin: 46.75, Larry: 99.94,
+  Laura: 14.59, Linda: 40.81, Marcus: 80.42, Neil: 49.59, Randy: 66.07, Rose: 58.2,
+  Samuel: 89.55, Suzanna: 39.62, Xavier: 61.96}
+David: {Alex: 89.2, Ann: 16.42, Cornell: 13.86, Diana: 95.07, Frances: 69.29, Gretchen: 67.64,
+  Hubert: 26.38, Julie: 77.15, Laura: 65.4, Linda: 10.41, Marie: 12.27, Michael: 10.76,
+  Michele: 29.58, Neil: 21.77, Robert: 19.66, Samuel: 34.4, Sheila: 16.98, Sherry: 11.82}
+Dennis: {Alison: 78.67, Allen: 17.05, Arthur: 69.91, Constance: 37.21, Dale: 25.62,
+  Doris: 74.87, Jess: 15.5, Kelly: 32.57, Larry: 95.54, Lillian: 49.1, Lorene: 68.4,
+  Michele: 85.13, Rose: 61.44, Sheila: 38.52}
+Diana: {Ann: 49.95, Christia: 42.3, Emma: 41.03, Frances: 69.63, Grace: 52.4, Harold: 51.56,
+  Hubert: 67.35, James: 45.78, Jessie: 83.15, Lorene: 62.37, Marcus: 65.79, Maria: 50.83,
+  Marie: 72.15, Michele: 61.96, Neil: 74.08, Richard: 86.88, Robert: 45.58, Robin: 59.64,
+  Rose: 90.96, Ryan: 86.97, Samuel: 97.44, Sandra: 41.96, Todd: 77.74}
+Doris: {Anna: 47.0, Barbara: 22.63, Edwin: 76.95, Grace: 48.38, Helen: 79.15, Jess: 51.73,
+  Joseph: 39.13, Kelly: 51.31, Larry: 83.8, Lorene: 52.53, Michele: 72.18, Nathan: 44.81,
+  Patricia: 91.11, Salvador: 23.85, Sarah: 46.77, Todd: 54.89, William: 36.38, Willie: 32.8}
+Earlene: {Alex: 89.24, Alison: 13.54, Anna: 57.51, David: 54.25, Doris: 50.98, Edwin: 92.92,
+  Grace: 64.75, Jessie: 83.34, Joe: 56.82, Leona: 98.03, Maria: 41.46, Randy: 27.88,
+  Rebecca: 74.56, Robert: 31.78, Suzanna: 10.12, Todd: 10.7}
+Edwin: {Anna: 18.56, Arthur: 39.59, Esther: 19.34, Fred: 32.09, Jess: 81.62, Jill: 39.41,
+  Joel: 64.18, John: 22.42, Kathryn: 45.35, Lauri: 20.17, Marcus: 69.89, Michele: 73.58,
+  Rebecca: 16.79, Robin: 76.02, Ryan: 86.91}
+Emma: {Alice: 10.3, Burton: 38.4, Christia: 90.45, Cornell: 44.26, Fred: 87.41, Helen: 43.52,
+  Jill: 54.91, Joel: 91.81, Josh: 57.99, Kelly: 84.4, Lorene: 41.05, Marcus: 13.93,
+  Maria: 82.08, Mary: 83.35, Neil: 18.88, Rickey: 15.77, Robin: 87.61, Sheila: 33.67,
+  William: 37.94}
+Ernestine: {Alison: 25.09, Arthur: 93.23, Bessie: 46.12, Burton: 33.95, Dennis: 14.62,
+  Diana: 54.87, Hubert: 45.72, Jess: 18.44, Joseph: 73.03, Josh: 85.8, Julie: 97.06,
+  Kelly: 33.02, Mae: 56.65, Michele: 45.65, Neil: 58.62, Randy: 97.58, Robert: 14.92,
+  Robin: 32.69, Rose: 34.78, Sarah: 39.33, Stephen: 89.15, Todd: 18.89, William: 56.96}
+Esther: {Christia: 90.34, Daniel: 62.33, Ernestine: 48.94, Fred: 53.16, Grace: 95.78,
+  Julie: 23.31, Mae: 30.52, Maria: 87.04, Mary: 50.59, Nathan: 89.76, Neil: 77.35,
+  Patricia: 88.59, Richard: 21.18, Robert: 74.48, Rosa: 18.41, Rose: 53.6, Ryan: 71.5,
+  Samuel: 11.05, Sandra: 96.48, Sarah: 83.43, Sheila: 45.79}
+Frances: {Burton: 55.65, Diana: 68.72, Emma: 23.45, Ernestine: 60.33, Gretchen: 53.03,
+  Hubert: 51.32, Joel: 78.01, John: 13.97, Kelly: 78.29, Larry: 14.54, Laura: 34.01,
+  Marcus: 29.07, Robert: 65.4, Ronald: 11.51, Salvador: 18.38, Sandra: 32.9, Sheila: 68.99,
+  William: 32.51}
+Fred: {Anna: 96.1, Arthur: 98.37, Constance: 56.34, Diana: 14.54, Emma: 39.58, Jess: 21.63,
+  Jessie: 68.91, Julie: 45.32, Larry: 35.28, Leona: 72.24, Mae: 94.36, Marie: 62.38,
+  Mark: 49.89, Mary: 98.91, Neil: 25.51, Nicholas: 38.85, Richard: 47.4, Robert: 55.17,
+  Ronald: 88.8, Rose: 71.53, Ryan: 60.92, Stephen: 87.75, Suzanna: 98.04, Todd: 66.41}
+Grace: {Allen: 10.56, Christia: 22.91, Christine: 81.47, Daniel: 22.59, David: 26.08,
+  Diana: 38.91, Esther: 88.35, Gretchen: 16.6, Hubert: 39.1, Jack: 42.63, Kathryn: 72.91,
+  Laura: 64.77, Maria: 65.48, Michael: 86.47, Nicholas: 19.59, Randy: 27.64, Rickey: 46.24,
+  Robert: 31.87, Ronald: 39.91, Rosa: 45.3, Ryan: 78.02, Sheila: 50.32, Sherry: 65.33}
+Gretchen: {Alex: 32.58, Allen: 32.01, Bessie: 93.76, Daniel: 83.24, Edwin: 17.4, Grace: 70.33,
+  Joel: 99.11, Josh: 80.91, Lauri: 64.34, Mae: 51.94, Marcus: 27.45, Michael: 74.84,
+  Michele: 24.09, Neil: 20.04, Randy: 33.86, Salvador: 62.86, Samuel: 26.83, Sarah: 89.28,
+  Sheila: 32.89, William: 65.6}
+Harold: {Alice: 40.08, Constance: 51.9, Cornell: 67.62, Edwin: 49.83, Frances: 56.15,
+  Hubert: 25.68, Jess: 30.99, Jessie: 34.05, Jill: 10.73, Josh: 43.06, Kathryn: 53.93,
+  Kevin: 19.61, Linda: 66.51, Maria: 92.18, Michael: 18.48, Richard: 20.69, Ronald: 80.83,
+  Salvador: 32.64, Sarah: 89.09}
+Helen: {Alison: 68.43, Ann: 11.46, David: 66.08, Grace: 25.77, Harold: 19.65, Helen: 55.65,
+  Jack: 81.94, James: 36.28, Michele: 70.32, Rosa: 82.06, Sheila: 30.42, William: 37.92,
+  Xavier: 16.52}
+Hubert: {Alex: 99.78, Arthur: 79.48, Constance: 48.43, Cornell: 23.12, David: 61.07,
+  Frances: 27.73, Fred: 80.1, Gretchen: 27.78, Jess: 40.31, Joseph: 32.69, Mark: 66.48,
+  Michael: 17.88, Patricia: 56.38, Rickey: 61.54, Samuel: 20.54, Sarah: 98.81, Suzanna: 42.45,
+  Willie: 32.14}
+Jack: {Anna: 93.99, Doris: 15.97, Earlene: 96.11, Emma: 28.14, Ernestine: 26.23, Esther: 39.15,
+  Frances: 32.35, Fred: 43.89, Hubert: 11.61, Jess: 19.63, Jessie: 29.57, Joseph: 42.22,
+  Josh: 85.6, Leona: 30.51, Maria: 12.05, Michele: 72.17, Nathan: 33.15, Rebecca: 19.77,
+  Sheila: 83.93, Willie: 97.38, Xavier: 82.04}
+James: {Alice: 22.95, Arthur: 13.67, Barbara: 21.73, Bessie: 15.16, Constance: 52.08,
+  Daniel: 82.38, Doris: 73.77, Frances: 51.59, Fred: 89.14, Jack: 19.07, John: 16.62,
+  Leona: 45.38, Michele: 18.56, Neil: 61.06, Patricia: 71.72, Randy: 65.11, Richard: 26.45,
+  Rickey: 54.29, Ronald: 73.79, Rose: 42.12, Sarah: 71.89, Sherry: 49.48, Stephen: 32.84}
+Janet: {Christine: 13.21, Dale: 26.36, Daniel: 49.77, Dennis: 85.48, Doris: 97.5,
+  Emma: 57.82, Grace: 70.84, Josh: 69.88, Rebecca: 63.46, Sheila: 47.96}
+Jess: {Allen: 63.83, Christia: 92.69, Daniel: 40.48, Emma: 90.15, Frances: 79.97,
+  Fred: 73.93, Jack: 23.14, Jess: 62.42, Leona: 70.33, Lorene: 90.24, Marie: 65.53,
+  Mary: 53.17, Nathan: 10.74, Patricia: 69.71, Randy: 59.82, Robert: 48.29, Ryan: 67.15,
+  Sheila: 53.79, Sherry: 38.52, Todd: 22.84, William: 88.18, Willie: 64.14}
+Jessie: {Ann: 14.01, Burton: 32.09, Christine: 33.89, Cornell: 35.73, David: 94.71,
+  Doris: 88.79, Edwin: 48.82, Frances: 53.57, Grace: 31.13, Joseph: 76.1, Mark: 25.89,
+  Michele: 59.09, Richard: 69.24, Rickey: 75.64, Robin: 94.51, Rosa: 22.29, William: 29.67,
+  Willie: 94.08}
+Jill: {Anna: 45.64, Arthur: 89.41, Bessie: 28.77, David: 60.12, Fred: 54.83, Hubert: 44.9,
+  James: 71.6, Jessie: 16.01, Jill: 36.46, Josh: 93.37, Kelly: 29.51, Leona: 35.94,
+  Mae: 48.13, Marie: 52.26, Nicholas: 45.03, Randy: 90.23, Richard: 84.08, Rickey: 34.81,
+  Rosa: 71.06, Ryan: 41.96, Samuel: 38.48, Sandra: 86.82, Suzanna: 50.13}
+Joe: {Ann: 62.91, Arthur: 91.63, Barbara: 60.58, Christia: 37.92, Daniel: 42.61, Edwin: 65.1,
+  Fred: 96.49, Harold: 34.65, Jack: 78.53, Jill: 62.4, Joseph: 67.94, Kelly: 57.49,
+  Mae: 13.39, Michael: 57.47, Michele: 77.17, Randy: 61.7, Ronald: 65.65, Rosa: 71.17,
+  Rose: 49.25, Sheila: 29.4, Stephen: 49.72, Todd: 54.41, William: 83.66, Willie: 58.97}
+Joel: {Alice: 77.59, Barbara: 17.48, Christine: 36.83, Fred: 18.8, Grace: 70.15, Janet: 41.35,
+  John: 77.14, Julie: 23.83, Lauri: 27.31, Lillian: 73.24, Lorene: 94.82, Mark: 21.12,
+  Neil: 51.84, Ronald: 45.63, Salvador: 36.32, Samuel: 83.17, Todd: 55.31, Willie: 51.76}
+John: {Alice: 53.75, Anna: 56.46, Frances: 62.71, Gretchen: 20.97, Helen: 36.79, Joel: 99.48,
+  Kelly: 40.97, Lauri: 90.21, Maria: 40.11, Marie: 97.93, Michele: 82.39, Patricia: 37.08,
+  Richard: 39.24, Rickey: 96.21, Robert: 19.52, Rose: 85.86, Sherry: 47.98, Suzanna: 80.62,
+  Xavier: 81.94}
+Joseph: {Christine: 21.75, Dale: 66.95, Dennis: 55.29, Doris: 19.87, Grace: 97.49,
+  Gretchen: 38.16, Helen: 17.37, Joel: 19.88, Joseph: 40.13, Kathryn: 92.02, Lauri: 96.87,
+  Lillian: 19.87, Neil: 10.0, Robin: 95.83, Rosa: 77.01, Sheila: 72.42}
+Josh: {David: 31.79, Earlene: 13.45, Emma: 71.94, Grace: 49.96, Jess: 57.94, Jessie: 95.47,
+  Joseph: 26.83, Lorene: 57.86, Mae: 69.95, Marcus: 37.06, Mark: 40.79, Rebecca: 55.19,
+  Robert: 33.48, Rosa: 28.34, Rose: 92.84, Samuel: 71.46, Sheila: 46.88, Stephen: 64.58,
+  William: 98.78}
+Julie: {Alison: 62.05, Ann: 92.98, Christine: 42.87, David: 74.63, Earlene: 62.79,
+  Frances: 13.19, Gretchen: 89.86, James: 63.75, Kelly: 76.77, Laura: 55.58, Marcus: 93.2,
+  Mark: 50.41, Neil: 48.08, Patricia: 26.12, Richard: 14.84, Rosa: 98.29, Ryan: 38.94,
+  Samuel: 66.53}
+Kathryn: {David: 53.54, Grace: 87.54, Gretchen: 21.62, Jack: 14.31, James: 97.14,
+  Janet: 83.32, Joe: 21.0, Josh: 71.97, Kathryn: 73.16, Larry: 68.72, Michael: 66.56,
+  Michele: 99.15, Neil: 92.33, Patricia: 22.15, Rickey: 55.17, Samuel: 20.93}
+Kelly: {Alex: 63.72, Allen: 29.58, Ann: 90.34, Anna: 59.52, Grace: 58.74, Helen: 39.71,
+  James: 96.66, Joel: 59.95, Larry: 40.13, Laura: 44.8, Linda: 98.22, Maria: 17.04,
+  Michael: 96.29, Randy: 30.5, Robert: 59.46, Robin: 61.86, Rosa: 64.59, Rose: 20.29,
+  Samuel: 56.19, Suzanna: 84.16, Willie: 36.6}
+Kevin: {Ann: 78.01, Dale: 89.25, Daniel: 13.37, Dennis: 70.41, Doris: 96.05, Esther: 43.67,
+  Grace: 85.22, Gretchen: 20.65, Harold: 72.53, Helen: 46.51, James: 45.05, Janet: 32.66,
+  Jess: 24.38, Jill: 98.36, Joel: 78.16, Joseph: 74.87, Leona: 73.69, Mae: 34.19,
+  Maria: 32.84, Marie: 75.66, Mary: 17.76, Nathan: 34.61, Rose: 35.87, Sarah: 57.88,
+  William: 60.19, Willie: 65.0}
+Larry: {Alison: 13.9, Arthur: 91.59, Barbara: 90.28, Christia: 95.88, David: 67.01,
+  Dennis: 76.3, Doris: 46.76, Earlene: 43.96, Fred: 74.92, Jack: 89.53, Joseph: 96.11,
+  Josh: 21.69, Julie: 22.94, Kevin: 39.51, Mark: 60.75, Mary: 62.43, Michele: 20.53,
+  Nathan: 73.08, Robert: 20.31, Ronald: 44.06, Ryan: 66.36, Sandra: 39.45, Xavier: 41.27}
+Laura: {Alison: 17.93, Christia: 55.3, Christine: 30.76, Cornell: 93.21, Dale: 93.76,
+  Harold: 95.75, Jess: 54.42, Jill: 77.12, Joseph: 79.21, Kevin: 31.35, Lillian: 94.04,
+  Michele: 43.24, Rose: 65.73, Sandra: 62.1, Sarah: 86.3, Xavier: 52.69}
+Lauri: {Ann: 62.24, Arthur: 41.61, Constance: 57.67, Cornell: 55.19, Dennis: 78.31,
+  Doris: 19.36, Edwin: 58.63, Esther: 95.5, Frances: 14.59, Fred: 65.79, Hubert: 82.98,
+  Jill: 83.96, Joel: 95.22, John: 15.66, Josh: 87.26, Larry: 77.7, Lillian: 25.71,
+  Marie: 50.68, Patricia: 60.54, Richard: 36.33, Rickey: 95.69, Robin: 87.24, Sarah: 69.49,
+  Sheila: 41.33, Willie: 85.01, Xavier: 85.01}
+Leona: {Alex: 40.54, Ann: 52.37, Christia: 29.87, Constance: 83.74, Emma: 82.48, Helen: 93.19,
+  Jack: 30.69, Joe: 41.85, Kevin: 88.44, Laura: 23.96, Michele: 62.67, Nathan: 33.48,
+  Nicholas: 63.03, Patricia: 54.7, Randy: 52.03, Ronald: 80.1, Samuel: 81.35, Sandra: 22.0,
+  Sheila: 58.81, Sherry: 65.13, Stephen: 80.29, Suzanna: 61.5}
+Lillian: {Alice: 35.0, Arthur: 46.46, Bessie: 99.6, Burton: 68.5, Daniel: 52.03, Dennis: 71.32,
+  Harold: 33.68, James: 21.95, Janet: 46.0, Jess: 73.72, Jessie: 78.98, Jill: 20.27,
+  Joe: 48.7, Joseph: 21.18, Kathryn: 15.41, Kelly: 15.4, Lauri: 91.58, Mae: 20.57,
+  Michael: 58.91, Michele: 76.56, Nathan: 37.05, Nicholas: 19.44, Rickey: 48.04, Sandra: 51.18,
+  Suzanna: 64.62, Willie: 85.84}
+Linda: {Anna: 81.16, Barbara: 71.49, Cornell: 54.81, Diana: 42.31, Frances: 33.39,
+  Helen: 84.96, Jack: 79.52, James: 47.51, Joel: 18.41, John: 21.54, Kathryn: 33.8,
+  Larry: 95.64, Linda: 74.85, Marcus: 86.88, Maria: 36.53, Mark: 41.51, Neil: 22.6,
+  Rose: 80.95, Sheila: 52.21, Sherry: 15.55, Todd: 74.06}
+Lorene: {Alice: 75.26, Christine: 61.19, Doris: 12.93, Grace: 22.93, Gretchen: 95.86,
+  Harold: 40.11, Janet: 69.38, Jess: 17.18, John: 93.37, Julie: 38.78, Kelly: 11.39,
+  Larry: 88.51, Lillian: 29.1, Lorene: 57.67, Maria: 61.7, Mark: 76.24, Mary: 92.27,
+  Sarah: 78.64}
+Mae: {Allen: 53.25, Ann: 18.42, Bessie: 72.92, Doris: 75.23, Edwin: 57.89, Ernestine: 15.17,
+  Frances: 20.02, Helen: 40.67, Hubert: 83.57, Janet: 48.03, Jessie: 56.91, Joe: 87.73,
+  Joel: 84.12, Joseph: 50.3, Kelly: 82.12, Kevin: 31.73, Lauri: 78.43, Mark: 56.81,
+  Nathan: 79.59, Nicholas: 51.91, Ryan: 76.91, Sarah: 60.1}
+Marcus: {Alison: 86.89, Barbara: 82.88, Christia: 84.16, Dale: 34.87, Ernestine: 98.01,
+  Frances: 78.45, Hubert: 54.89, Jack: 61.99, Jess: 71.93, Jessie: 29.14, Jill: 47.03,
+  Lorene: 16.35, Nathan: 43.52, Neil: 51.17, Nicholas: 62.3, Patricia: 64.96, Richard: 59.75,
+  Willie: 91.61}
+Maria: {Arthur: 28.35, Christia: 46.97, Constance: 66.74, Cornell: 32.99, Dale: 96.04,
+  Daniel: 62.65, Diana: 68.31, Doris: 26.46, Edwin: 68.48, Emma: 54.21, Gretchen: 92.53,
+  Hubert: 24.81, Julie: 12.87, Kathryn: 97.0, Lillian: 90.06, Mary: 72.11, Randy: 83.84,
+  Richard: 42.14, Ronald: 39.73, Samuel: 79.82, Sheila: 49.09, William: 49.26}
+Marie: {Alison: 56.92, Allen: 48.55, Earlene: 81.29, Ernestine: 71.14, Fred: 77.07,
+  Grace: 83.78, Gretchen: 33.19, Harold: 16.91, Jack: 92.13, Janet: 21.56, Kelly: 55.18,
+  Laura: 94.73, Marie: 99.16, Neil: 53.29, Nicholas: 94.26, Patricia: 12.16, Robert: 75.64,
+  Todd: 33.21, Xavier: 76.12}
+Mark: {Alex: 39.91, Alison: 11.71, Burton: 33.16, Christia: 92.98, Christine: 86.58,
+  Diana: 53.88, Earlene: 56.16, Esther: 27.24, Grace: 94.06, Helen: 54.11, Janet: 69.12,
+  Joe: 17.06, Kathryn: 78.83, Kevin: 24.35, Marie: 48.94, Nicholas: 71.35, Patricia: 38.92,
+  Rebecca: 30.88, Rickey: 65.64, Robin: 44.45, Ronald: 41.02, Salvador: 32.02, Suzanna: 94.47}
+Mary: {Allen: 89.03, Anna: 67.41, Barbara: 75.32, Bessie: 11.94, Cornell: 95.2, Frances: 71.51,
+  Jessie: 46.59, Joel: 22.68, John: 93.69, Joseph: 63.76, Lillian: 72.5, Maria: 83.72,
+  Mark: 63.48, Mary: 41.35, Michael: 55.68, Rosa: 76.79, Salvador: 58.28, Stephen: 80.17,
+  William: 32.1}
+Michael: {Diana: 81.63, Frances: 92.14, Hubert: 57.98, Janet: 37.55, Jessie: 27.49,
+  Joe: 24.08, Kathryn: 82.93, Kevin: 98.91, Lauri: 21.08, Leona: 86.86, Linda: 19.14,
+  Lorene: 21.05, Maria: 44.59, Mark: 60.17, Mary: 95.48, Nicholas: 24.62, Patricia: 64.19,
+  Richard: 66.35, Salvador: 87.46, Samuel: 16.36, Sherry: 14.39, Todd: 67.42, William: 46.08}
+Michele: {Alex: 38.17, Alice: 51.92, Anna: 72.42, Barbara: 92.06, Daniel: 47.49, Frances: 56.37,
+  Harold: 92.15, James: 83.31, Jessie: 15.54, Jill: 34.14, Kelly: 65.5, Lorene: 91.19,
+  Marcus: 21.86, Mary: 20.91, Michael: 16.38, Nicholas: 17.09, Patricia: 93.03, Rebecca: 96.2,
+  Robert: 82.88, Sandra: 57.29}
+Nathan: {Alison: 30.16, Barbara: 87.12, Dennis: 87.29, Doris: 72.48, Emma: 31.7, Helen: 93.76,
+  Jill: 19.21, John: 21.9, Josh: 21.32, Kathryn: 53.22, Kevin: 84.54, Laura: 56.24,
+  Lauri: 22.1, Lillian: 14.66, Maria: 70.79, Marie: 67.72, Robert: 90.31, Ryan: 70.48,
+  Samuel: 57.67, Todd: 16.75, William: 28.72, Xavier: 86.85}
+Neil: {Alison: 27.48, Christine: 23.6, Cornell: 19.91, Esther: 89.6, Jack: 18.32,
+  Jill: 45.64, John: 45.97, Larry: 94.94, Maria: 77.8, Mark: 16.63, Michele: 45.07,
+  Nathan: 63.8, Neil: 30.71, Nicholas: 17.81, Richard: 29.47, Rickey: 59.1, Robert: 75.92,
+  Robin: 21.3, Ryan: 65.9, Sarah: 28.52, Stephen: 96.26, Willie: 71.84}
+Nicholas: {Dale: 74.31, Dennis: 27.99, Ernestine: 18.78, Frances: 70.28, Grace: 39.32,
+  Harold: 26.71, Helen: 76.23, Kelly: 49.64, Marcus: 66.53, Mark: 84.96, Michele: 58.86,
+  Rickey: 81.68, Salvador: 33.33, Sherry: 75.51, William: 59.0, Willie: 84.14}
+Patricia: {Bessie: 61.55, Christia: 53.63, Christine: 27.89, Dale: 14.18, Dennis: 97.41,
+  Diana: 28.22, Edwin: 15.51, Jessie: 30.62, Maria: 70.64, Robin: 68.5, Ronald: 66.24,
+  Rosa: 25.09, Suzanna: 67.4, Willie: 47.2, Xavier: 81.55}
+Randy: {Alex: 92.91, Arthur: 52.33, Cornell: 53.75, Dale: 48.76, Dennis: 87.03, Emma: 67.64,
+  Frances: 47.78, Gretchen: 51.64, James: 24.48, Joe: 61.77, Larry: 23.6, Lauri: 50.51,
+  Lorene: 17.63, Marie: 98.27, Randy: 25.37, Rebecca: 16.84, Rosa: 78.43, Samuel: 97.74,
+  Sandra: 70.3, Sarah: 79.62, Sheila: 31.54, Suzanna: 56.14, William: 69.67, Willie: 13.0}
+Rebecca: {Arthur: 96.75, Daniel: 24.21, Diana: 65.13, Esther: 10.46, Frances: 59.25,
+  Josh: 67.3, Julie: 88.9, Kathryn: 98.88, Kelly: 73.12, Lillian: 51.69, Maria: 42.52,
+  Mary: 60.57, Michele: 10.45, Randy: 59.42, Rose: 59.93, Salvador: 93.81, Sherry: 77.71,
+  Willie: 89.06, Xavier: 12.18}
+Richard: {Alison: 12.83, Arthur: 85.6, Christia: 10.69, Christine: 95.68, Dennis: 46.85,
+  Diana: 72.72, Frances: 63.49, Gretchen: 29.92, Harold: 55.08, Hubert: 13.18, Jack: 47.25,
+  Jessie: 59.51, John: 71.09, Lauri: 32.11, Lillian: 25.37, Linda: 46.72, Marcus: 20.39,
+  Marie: 18.77, Michele: 80.95, Rosa: 55.9, Salvador: 92.47, Sheila: 21.02}
+Rickey: {Allen: 48.19, Bessie: 17.34, Ernestine: 42.95, Frances: 96.17, Fred: 28.92,
+  Jack: 13.57, Joe: 92.68, Joseph: 71.63, Josh: 46.61, Kathryn: 32.9, Kelly: 20.11,
+  Kevin: 86.88, Lillian: 27.37, Linda: 23.5, Lorene: 90.07, Marcus: 31.09, Michele: 36.54,
+  Patricia: 39.63, Robert: 67.63, Rosa: 79.16, Rose: 89.12, Sherry: 54.72, Todd: 21.83}
+Robert: {Alice: 98.55, Allen: 43.63, Ann: 46.77, Arthur: 41.1, Christia: 64.27, Cornell: 87.32,
+  Fred: 27.13, Harold: 79.9, Hubert: 76.71, Jessie: 23.22, Joel: 96.53, John: 26.22,
+  Joseph: 75.43, Leona: 21.93, Lorene: 71.05, Marie: 91.03, Michele: 16.7, Nathan: 71.29,
+  Rebecca: 43.36, Robert: 11.99, Robin: 93.65, Ryan: 37.15}
+Robin: {Alex: 93.59, Alison: 11.29, Arthur: 39.35, Bessie: 89.89, Burton: 36.97, Christine: 95.48,
+  Daniel: 31.04, David: 98.22, Dennis: 70.45, Esther: 74.71, Hubert: 44.26, James: 79.2,
+  Janet: 64.81, John: 45.35, Josh: 57.25, Kelly: 77.24, Laura: 36.72, Leona: 83.49,
+  Marcus: 76.69, Mary: 85.38, Nathan: 24.31, Neil: 75.74, Nicholas: 25.97, Patricia: 67.92,
+  Rebecca: 70.19, Richard: 16.72, Rickey: 43.08, Robert: 11.48, Ronald: 65.63, Rose: 44.62,
+  Samuel: 32.16, Xavier: 28.28}
+Ronald: {Anna: 98.58, Barbara: 96.18, Constance: 90.81, Dale: 55.99, Daniel: 62.49,
+  David: 12.74, Diana: 87.89, Edwin: 93.0, Emma: 80.26, Hubert: 15.28, Jack: 62.04,
+  Jill: 59.93, John: 15.57, Josh: 86.53, Laura: 44.21, Lorene: 29.16, Mae: 94.49,
+  Marcus: 70.52, Michael: 57.1, Nathan: 68.62, Sheila: 73.33, William: 27.42}
+Rosa: {Allen: 15.24, Burton: 57.82, Earlene: 14.74, Emma: 84.29, Esther: 64.0, Fred: 79.22,
+  Janet: 29.41, Jessie: 93.34, Joseph: 65.69, Larry: 56.55, Leona: 77.63, Mae: 29.9,
+  Maria: 70.48, Mary: 44.09, Neil: 96.69, Rosa: 59.77, Suzanna: 51.04, Todd: 20.5}
+Rose: {Alison: 94.32, Burton: 18.3, Christine: 60.23, Esther: 67.68, Kathryn: 30.53,
+  Kevin: 30.24, Lauri: 35.61, Leona: 40.6, Lorene: 93.5, Michael: 96.2, Richard: 67.86,
+  Rickey: 31.81, Ryan: 49.59, Sheila: 60.26}
+Ryan: {Alice: 42.06, Bessie: 64.76, Ernestine: 35.2, Esther: 85.08, Harold: 98.38,
+  Helen: 91.21, Hubert: 25.0, James: 90.13, Jess: 72.32, Kathryn: 44.68, Lillian: 77.13,
+  Linda: 42.12, Mae: 85.23, Marcus: 27.12, Mark: 80.46, Mary: 33.28, Michael: 42.59,
+  Nathan: 77.87, Rickey: 53.24, Ryan: 40.16, Sheila: 83.36, Stephen: 21.08, Todd: 83.65}
+Salvador: {Barbara: 62.16, Constance: 21.64, Dale: 30.06, David: 57.08, Edwin: 73.01,
+  Harold: 50.68, Janet: 96.45, Jill: 66.67, Joel: 52.22, Kathryn: 31.35, Kelly: 93.98,
+  Larry: 26.89, Laura: 67.11, Marie: 70.2, Mark: 71.51, Mary: 96.42, Michael: 31.47,
+  Michele: 19.03, Nicholas: 15.8, Robert: 27.12, Rosa: 16.58, Salvador: 64.45, Sandra: 26.66,
+  Sarah: 99.72, Willie: 29.67, Xavier: 70.05}
+Samuel: {Alice: 19.72, Arthur: 94.32, Burton: 56.8, Christia: 55.07, Daniel: 53.61,
+  David: 93.41, Edwin: 13.11, Janet: 83.76, Jess: 29.23, Jill: 50.5, Joel: 33.97,
+  Kevin: 17.35, Lauri: 24.67, Leona: 35.02, Lorene: 24.17, Randy: 79.31, Ronald: 48.89,
+  Rosa: 14.05, Ryan: 28.32, Samuel: 12.83, Todd: 67.71, William: 22.8}
+Sandra: {Alex: 98.93, Bessie: 94.17, David: 16.92, Dennis: 26.68, Diana: 34.91, Doris: 87.5,
+  Ernestine: 78.81, James: 47.6, Kathryn: 61.66, Kelly: 18.43, Laura: 12.35, Lauri: 17.61,
+  Lillian: 50.8, Linda: 10.18, Lorene: 44.13, Mae: 76.29, Marie: 96.95, Nathan: 37.27,
+  Randy: 88.34, Rebecca: 71.78, Robin: 79.51, Ronald: 61.02, Rose: 33.89, Sheila: 68.86,
+  Stephen: 18.06, Todd: 64.15, William: 93.97, Willie: 85.78}
+Sarah: {Gretchen: 10.4, Harold: 36.74, Helen: 81.2, James: 49.69, Janet: 69.65, Joel: 77.29,
+  Julie: 11.95, Marcus: 32.71, Rosa: 28.04, Salvador: 90.31, Samuel: 50.87, Sandra: 59.67,
+  Sheila: 52.04}
+Sheila: {Cornell: 21.7, Doris: 60.56, Esther: 34.29, Hubert: 10.9, Jessie: 41.99,
+  Kevin: 56.67, Larry: 17.82, Lillian: 89.77, Mae: 57.84, Michael: 36.27, Michele: 47.69,
+  Neil: 63.35, Richard: 47.19, Ronald: 63.98, Rosa: 75.2, Sheila: 28.85, Sherry: 89.21,
+  Suzanna: 91.93, Willie: 44.21}
+Sherry: {Ann: 33.01, Anna: 97.57, Barbara: 36.82, Bessie: 36.08, Burton: 23.65, Constance: 43.23,
+  Dale: 34.81, Edwin: 48.32, Esther: 13.65, Hubert: 49.99, Joe: 13.25, Kevin: 69.61,
+  Lillian: 69.51, Linda: 60.96, Mae: 82.65, Patricia: 25.75, Rebecca: 51.65, Richard: 59.73,
+  Willie: 42.97}
+Stephen: {Alex: 75.63, Alice: 70.84, Christia: 84.14, Christine: 85.22, Daniel: 94.0,
+  Dennis: 47.68, Doris: 84.52, Fred: 83.99, Helen: 77.15, Jack: 65.48, James: 60.2,
+  Janet: 93.12, Jessie: 41.55, Kathryn: 97.22, Larry: 71.04, Marcus: 81.82, Sarah: 44.58,
+  Sheila: 12.28, Sherry: 12.43, Stephen: 45.12}
+Suzanna: {Alice: 94.39, Alison: 26.28, Christine: 31.23, Diana: 94.23, Esther: 87.31,
+  Grace: 46.85, Helen: 92.84, Jack: 89.23, Jill: 99.13, Joseph: 29.51, Kelly: 52.92,
+  Lauri: 40.0, Linda: 25.7, Mae: 46.71, Michael: 31.34, Neil: 47.46, Robert: 32.86,
+  Rose: 34.68, Suzanna: 78.9, Willie: 75.62}
+Todd: {Alison: 41.87, Ann: 57.22, Christine: 71.56, Dennis: 54.69, Gretchen: 13.55,
+  Harold: 11.67, Jess: 86.97, Josh: 74.66, Larry: 38.9, Lorene: 74.2, Patricia: 45.17,
+  Ryan: 73.79, Salvador: 71.62, Stephen: 39.07, Suzanna: 74.14, William: 75.84}
+William: {Ann: 84.18, Anna: 56.3, Arthur: 52.17, Barbara: 58.86, David: 36.67, Doris: 94.47,
+  Esther: 39.88, Fred: 36.49, Gretchen: 92.14, Janet: 61.53, Joe: 51.95, Josh: 54.15,
+  Lauri: 34.0, Lillian: 25.93, Linda: 18.94, Mark: 22.07, Patricia: 90.17, Richard: 13.8,
+  Robert: 96.98, Rose: 88.9, Ryan: 99.18, Samuel: 25.77, Willie: 16.05, Xavier: 93.17}
+Willie: {Allen: 87.22, Anna: 82.95, Dale: 99.29, Daniel: 28.56, Earlene: 59.4, Edwin: 83.13,
+  Hubert: 55.24, Jess: 99.82, Larry: 45.94, Lauri: 12.53, Linda: 13.15, Maria: 27.92,
+  Michael: 81.5, Nicholas: 31.89, Robin: 46.3, Rosa: 49.61, Salvador: 74.26, Sandra: 92.15,
+  Sheila: 46.77, Sherry: 11.86, Todd: 26.22, Willie: 21.84, Xavier: 11.67}
+Xavier: {Anna: 10.01, Christia: 63.69, Constance: 54.38, David: 93.6, Earlene: 97.78,
+  Edwin: 95.87, Emma: 25.17, Gretchen: 84.63, Hubert: 12.43, Jessie: 62.41, John: 91.97,
+  Julie: 59.76, Mark: 30.4, Rebecca: 11.13, Richard: 77.9, Ronald: 66.93, Rosa: 48.99,
+  Salvador: 82.41, Willie: 58.16}

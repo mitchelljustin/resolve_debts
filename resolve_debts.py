@@ -9,10 +9,10 @@ import click
 def resolve_debt(ledger: dict):
     # read ledger and generate graph
     graph = nx.DiGraph()
-    graph.add_nodes_from(ledger.keys(), balance=0.0)
+    graph.add_nodes_from(ledger.keys(), balance=0)
     for debtor, debts in ledger.items():
         for creditor, amount in debts.items():
-            graph.add_edge(debtor, creditor, amount=amount)
+            graph.add_edge(debtor, creditor, amount=int(amount * 100))
     # execute all transaction edges
     for edge in graph.edges_iter(data=True):
         u, v, data = edge
@@ -43,9 +43,11 @@ def resolve_debt(ledger: dict):
 @click.command()
 @click.option('--yml-file', '-f', type=click.File('r'))
 @click.option('--draw/--no-draw', default=False)
+@click.option('--show-balances/--hide-balances', default=True)
 def cli(
     yml_file,
     draw,
+    show_balances,
 ):
     if not yml_file:
         yml_file = stdin
@@ -63,7 +65,7 @@ def cli(
             with_labels=True
         )
         edge_labels = {
-            (u, v): attribs['amount']
+            (u, v): attribs['amount'] / 100
             for u, v, attribs in resolved_graph.edges_iter(data=True)
             }
         nx.draw_networkx_edge_labels(
@@ -71,20 +73,21 @@ def cli(
             pos=pos,
             edge_labels=edge_labels
         )
-        node_labels = {
-            node: attribs['orig_balance']
-            for node, attribs in resolved_graph.nodes_iter(data=True)
-            }
-        elevated_pos = {
-            key: (x, y + 5 / 100)
-            for key, (x, y) in pos.items()
-            }
-        nx.draw_networkx_labels(
-            resolved_graph,
-            pos=elevated_pos,
-            labels=node_labels,
-            font_weight='bold'
-        )
+        if show_balances:
+            node_labels = {
+                node: attribs['orig_balance'] / 100
+                for node, attribs in resolved_graph.nodes_iter(data=True)
+                }
+            elevated_pos = {
+                key: (x, y + 5 / 100)
+                for key, (x, y) in pos.items()
+                }
+            nx.draw_networkx_labels(
+                resolved_graph,
+                pos=elevated_pos,
+                labels=node_labels,
+                font_weight='bold'
+            )
         plt.show()
 
 
