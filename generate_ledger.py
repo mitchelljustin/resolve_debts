@@ -26,7 +26,7 @@ def cli(
         name_to = random.choice(keys)
         amount = random.randint(min_amount * 100, max_amount * 100) / 100
         ledger[name_from][name_to] = amount
-    yaml.dump(ledger, stdout)
+    yaml.dump(ledger, stdout, default_flow_style=False)
 
 
 if __name__ == '__main__':
