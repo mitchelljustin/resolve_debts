@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import click
 
 
-def reconcile_debt(ledger: dict):
+def resolve_debt(ledger: dict):
     # read ledger and generate graph
     graph = nx.DiGraph()
     graph.add_nodes_from(ledger.keys(), balance=0.0)
@@ -50,7 +50,7 @@ def cli(
     if not yml_file:
         yml_file = stdin
     ledger = yaml.load(yml_file)
-    resolved_graph = reconcile_debt(ledger)
+    resolved_graph = resolve_debt(ledger)
     pos = nx.spring_layout(resolved_graph)
     if draw:
         nx.draw(
