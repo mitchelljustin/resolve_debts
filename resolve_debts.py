@@ -23,20 +23,30 @@ def resolve_debt(ledger: dict):
     for node, data in graph.nodes_iter(data=True):
         graph.node[node]['orig_balance'] = data['balance']
     # generate least-churn transaction edges
-    creditors = [(node, data) for node, data in graph.nodes_iter(data=True) if data['balance'] > 0]
-    creditors.sort(key=lambda n: n[1]['balance'])
-    debtors = [(node, data) for node, data in graph.nodes_iter(data=True) if data['balance'] < 0]
-    debtors.sort(key=lambda n: -n[1]['balance'])
+    nodes_sorted_by_balance = sorted(
+        graph.nodes_iter(data=True),
+        key=lambda node: node[1]['balance'],
+        reverse=True
+    )
+    creditors = [
+        (node, data) for node, data in nodes_sorted_by_balance if data['balance'] > 0
+    ]
+    debtors = list(reversed([
+        (node, data) for node, data in nodes_sorted_by_balance if data['balance'] < 0
+    ]))
     for creditor_node, creditor_data in creditors:
         for debtor_node, debtor_data in debtors:
             creditor_balance = creditor_data['balance']
             debtor_balance = debtor_data['balance']
-            if creditor_balance == 0 or debtor_balance == 0:
+            if debtor_balance == 0:
                 continue
+            if creditor_balance == 0:
+                break
             tx_amount = min(-debtor_balance, creditor_balance)
             creditor_data['balance'] -= tx_amount
             debtor_data['balance'] += tx_amount
             graph.add_edge(debtor_node, creditor_node, amount=tx_amount)
+    assert all((data['balance'] == 0 for _, data in graph.nodes_iter(data=True)))
     return graph
 
 
@@ -67,7 +77,7 @@ def cli(
         edge_labels = {
             (u, v): "{:.02f}".format(attribs['amount'] / 100)
             for u, v, attribs in resolved_graph.edges_iter(data=True)
-            }
+        }
         nx.draw_networkx_edge_labels(
             resolved_graph,
             pos=pos,
@@ -77,11 +87,11 @@ def cli(
             node_labels = {
                 node: "{:.02f}".format(attribs['orig_balance'] / 100)
                 for node, attribs in resolved_graph.nodes_iter(data=True)
-                }
+            }
             elevated_pos = {
                 key: (x, y + 5 / 100)
                 for key, (x, y) in pos.items()
-                }
+            }
             nx.draw_networkx_labels(
                 resolved_graph,
                 pos=elevated_pos,
