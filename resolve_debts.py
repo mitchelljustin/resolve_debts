@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+
 from sys import stdin
 
 import yaml
@@ -28,6 +30,9 @@ def resolve_debt(ledger: dict):
         key=lambda node: node[1]['balance'],
         reverse=True
     )
+    nodes_sorted_by_balance = [
+        (node, data) for node, data in nodes_sorted_by_balance if data['balance'] != 0
+    ]
     creditors = [
         (node, data) for node, data in nodes_sorted_by_balance if data['balance'] > 0
     ]
