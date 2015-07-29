@@ -68,8 +68,14 @@ def cli(
         yml_file = stdin
     ledger = yaml.load(yml_file)
     resolved_graph = resolve_debt(ledger)
-    for u, v, data in resolved_graph.edges_iter(data=True):
-        print("{} -> {}: {:.02f}".format(u, v, data['amount'] / 100))
+    print("resolution: {} transactions".format(resolved_graph.number_of_edges()))
+    for node, data in resolved_graph.nodes_iter(data=True):
+        balance = data['orig_balance']
+        if balance == 0:
+            continue
+        print("{}: {:.02f}".format(node, balance / 100))
+        for _, recipient, data in resolved_graph.out_edges_iter([node], data=True):
+            print("  -> {}: {:.02f}".format(recipient, data['amount'] / 100))
     if draw:
         pos = nx.spring_layout(resolved_graph)
         nx.draw(

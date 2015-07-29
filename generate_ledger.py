@@ -9,7 +9,7 @@ import random
 
 
 @click.command()
-@click.option('--num-transactions', '-t', default=10)
+@click.option('--num-transactions', '-t', default=None)
 @click.option('--num-nodes', '-n', default=5)
 @click.option('--min-amount', default=10)
 @click.option('--max-amount', default=100)
@@ -20,9 +20,14 @@ def cli(
     max_amount,
 ):
     max_num_transactions = num_nodes * (num_nodes - 1)
-    if num_transactions > max_num_transactions:
+    if num_transactions is None:
+        num_transactions = 10
+    elif num_transactions == 'max':
+        num_transactions = max_num_transactions
+    elif int(num_transactions) > max_num_transactions:
         print("num transactions is larger than max num transactions ({})".format(max_num_transactions))
         exit(1)
+    num_transactions = int(num_transactions)
     ledger = {}
     while len(ledger) < num_nodes:
         name = names.get_first_name()
