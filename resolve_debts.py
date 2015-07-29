@@ -2,20 +2,21 @@
 
 from sys import stdin
 
+from heapq import *
 import yaml
 import networkx as nx
 import matplotlib.pyplot as plt
 import click
 
 
-def resolve_debt(ledger: dict):
-    # read ledger and generate graph
-    graph = nx.DiGraph()
+def load_ledger_into_graph(graph, ledger):
     graph.add_nodes_from(ledger.keys(), balance=0)
     for debtor, debts in ledger.items():
         for creditor, amount in debts.items():
             graph.add_edge(debtor, creditor, amount=int(amount * 100))
-    # execute all transaction edges
+
+
+def execute_transactions(graph):
     for edge in graph.edges_iter(data=True):
         u, v, data = edge
         amount = data['amount']
@@ -24,7 +25,9 @@ def resolve_debt(ledger: dict):
     graph.remove_edges_from(graph.edges())
     for node, data in graph.nodes_iter(data=True):
         graph.node[node]['orig_balance'] = data['balance']
-    # generate least-churn transaction edges
+
+
+def generate_min_transactions(graph):
     nodes_sorted_by_balance = sorted(
         graph.nodes_iter(data=True),
         key=lambda node: node[1]['balance'],
@@ -37,8 +40,8 @@ def resolve_debt(ledger: dict):
         (node, data) for node, data in nodes_sorted_by_balance if data['balance'] > 0
     ]
     debtors = list(reversed([
-        (node, data) for node, data in nodes_sorted_by_balance if data['balance'] < 0
-    ]))
+                                (node, data) for node, data in nodes_sorted_by_balance if data['balance'] < 0
+                                ]))
     for creditor_node, creditor_data in creditors:
         for debtor_node, debtor_data in debtors:
             creditor_balance = creditor_data['balance']
@@ -52,6 +55,16 @@ def resolve_debt(ledger: dict):
             debtor_data['balance'] += tx_amount
             graph.add_edge(debtor_node, creditor_node, amount=tx_amount)
     assert all((data['balance'] == 0 for _, data in graph.nodes_iter(data=True)))
+
+
+def resolve_debt(ledger: dict):
+    graph = nx.DiGraph()
+    # read ledger and generate graph
+    load_ledger_into_graph(graph, ledger)
+    # execute all transaction edges
+    execute_transactions(graph)
+    # generate least-churn transaction edges
+    generate_min_transactions(graph)
     return graph
 
 
