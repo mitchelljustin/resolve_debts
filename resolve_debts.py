@@ -28,34 +28,11 @@ def execute_transactions(graph):
 
 
 def generate_min_transactions(graph):
-    nodes_sorted_by_balance = sorted(
-        graph.nodes_iter(data=True),
-        key=lambda node: node[1]['balance'],
-        reverse=True
+    total_tx_amount = sum(
+        data['balance'] for _, data in graph.nodes_iter(data=True)
+        if data['balance'] > 0
     )
-    nodes_sorted_by_balance = [
-        (node, data) for node, data in nodes_sorted_by_balance if data['balance'] != 0
-    ]
-    creditors = [
-        (node, data) for node, data in nodes_sorted_by_balance if data['balance'] > 0
-    ]
-    debtors = list(reversed([
-                                (node, data) for node, data in nodes_sorted_by_balance if data['balance'] < 0
-                                ]))
-    for creditor_node, creditor_data in creditors:
-        for debtor_node, debtor_data in debtors:
-            creditor_balance = creditor_data['balance']
-            debtor_balance = debtor_data['balance']
-            if debtor_balance == 0:
-                continue
-            if creditor_balance == 0:
-                break
-            tx_amount = min(-debtor_balance, creditor_balance)
-            creditor_data['balance'] -= tx_amount
-            debtor_data['balance'] += tx_amount
-            graph.add_edge(debtor_node, creditor_node, amount=tx_amount)
-    assert all((data['balance'] == 0 for _, data in graph.nodes_iter(data=True)))
-
+    pass
 
 def resolve_debt(ledger: dict):
     graph = nx.DiGraph()
