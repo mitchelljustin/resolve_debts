@@ -54,7 +54,7 @@ def cli(
     ledger = yaml.load(yml_file)
     resolved_graph = resolve_debt(ledger)
     for u, v, data in resolved_graph.edges_iter(data=True):
-        print("{} -> {}: {}".format(u, v, data['amount'] / 100))
+        print("{} -> {}: {:.02f}".format(u, v, data['amount'] / 100))
     if draw:
         pos = nx.spring_layout(resolved_graph)
         nx.draw(
@@ -65,7 +65,7 @@ def cli(
             with_labels=True
         )
         edge_labels = {
-            (u, v): attribs['amount'] / 100
+            (u, v): "{:.02f}".format(attribs['amount'] / 100)
             for u, v, attribs in resolved_graph.edges_iter(data=True)
             }
         nx.draw_networkx_edge_labels(
@@ -75,7 +75,7 @@ def cli(
         )
         if show_balances:
             node_labels = {
-                node: attribs['orig_balance'] / 100
+                node: "{:.02f}".format(attribs['orig_balance'] / 100)
                 for node, attribs in resolved_graph.nodes_iter(data=True)
                 }
             elevated_pos = {

@@ -17,7 +17,7 @@ def cli(
     max_amount,
 ):
     ledger = {
-        names.get_first_name(): {}
+        names.get_first_name(): dict()
         for _ in range(num_nodes)
         }
     keys = list(ledger.keys())
