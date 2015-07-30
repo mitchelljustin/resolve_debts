@@ -1,0 +1,24 @@
+{
+  "name": "mudelta",
+  "version": "1.0.0",
+  "description": "Least-transactions graph solver",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mvanderh/resolve_debts.git"
+  },
+  "author": "Mitchell Van Der Hoeff + Max Bernstein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvanderh/resolve_debts/issues"
+  },
+  "homepage": "https://github.com/mvanderh/resolve_debts#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "coffee-reactify": "^4.0.0",
+    "react": "^0.13.3"
+  }
+}
