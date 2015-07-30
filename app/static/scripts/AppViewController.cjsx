@@ -8,7 +8,8 @@ React.createClass
 		axios
 			.post('/optimize', ledgerObj)
 			.then((responseObj) =>
-				@refs.ledgerEditor.setTransactions(responseObj)
+				transactions = responseObj.data['transactions']
+				@refs.ledgerEditor.setTransactions(transactions)
 			)
 			.catch(console.err)
 	render: ->
