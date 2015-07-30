@@ -12,6 +12,6 @@ pip3 install -r core/requirements.txt
 
 ### Web app
 ````bash
-pip3 install -r core/requirements.txt
+pip3 install -r app/requirements.txt
 ./run_server.py
 ````
