@@ -2,14 +2,17 @@ LedgerEditorViewController = require './LedgerEditorViewController.cjsx'
 
 module.exports = 
 React.createClass
-	onLedgerSubmit: (ledgerObj) ->
+	onLedgerSubmit: (ledgerObj, completion) ->
 		axios
 			.post('/optimize', ledgerObj)
 			.then((responseObj) =>
 				transactions = responseObj.data['transactions']
 				@refs.ledgerEditor.setTransactions(transactions)
+				completion()
 			)
-			.catch(console.err)
+			.catch((error) => 
+				completion()
+			)
 	render: ->
 		<div className="container">
 			<div className="row col-sm-12">

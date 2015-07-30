@@ -3,11 +3,11 @@ LedgerTransactionView = require './LedgerTransactionView.cjsx'
 module.exports = 
 React.createClass
 	getInitialState: ->
-		return {
-				transactions: [
-					@makeEmptyTransaction()
-				]
-		}
+		dateLastOptimized: null
+		isOptimizing: false
+		transactions: [
+			@makeEmptyTransaction()
+		]
 	makeEmptyTransaction: -> {
 		debtor: ''
 		creditor: ''
@@ -21,7 +21,13 @@ React.createClass
 		@state.transactions.push(newTransaction)
 		@forceUpdate()
 	onOptimizeClick: ->
-		@props.onLedgerSubmit(@state.transactions)
+		@setState(isOptimizing: true)
+		completion = => 
+			@setState(
+				isOptimizing: false
+				dateLastOptimized: new Date()
+			)
+		@props.onLedgerSubmit(@state.transactions, completion)
 	onResetClick: ->
 		@setState(@getInitialState())
 	onTransactionDelete: (index) ->
@@ -45,6 +51,11 @@ React.createClass
 					<div className="ledger-actions">
 						<h4 className="text-left">
 							Ledger 
+				      <small>		
+			      		{
+			      			if @state.dateLastOptimized? then "Last optimized #{moment(@state.dateLastOptimized).calendar()}"
+			      		}
+			      	</small>
 						</h4>
 						<button className="btn btn-default" onClick={@onAddTransactionClick}>
 							Add Transaction
@@ -53,7 +64,7 @@ React.createClass
 							Reset
 						</button>	
 						<button className="btn btn-primary" onClick={@onOptimizeClick}>
-							Optimize!
+							{if @state.isOptimizing then "Optimizing.." else "Optimize!"}
 						</button>
 					</div>
 					<div className="transactions-container">
