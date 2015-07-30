@@ -6,8 +6,6 @@ React.createClass
 		return {
 				transactions: [
 					@makeEmptyTransaction(),
-					@makeEmptyTransaction(),
-					@makeEmptyTransaction(),
 					@makeEmptyTransaction()
 				]
 		}

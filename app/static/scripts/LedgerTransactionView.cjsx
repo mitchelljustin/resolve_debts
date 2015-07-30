@@ -5,8 +5,8 @@ React.createClass
 		debtor: ''
 		creditor: ''
 		amount: 0
-	componentWillMount: ->
-		@setTransactionObj(@props.transactionObj)
+	componentWillReceiveProps: (newProps) ->
+		@setTransactionObj(newProps.transactionObj)
 	onRemoveButtonClick: ->
 		@props.onDelete()
 	focus: ->
