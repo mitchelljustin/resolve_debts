@@ -26,6 +26,7 @@ React.createClass
 				<div className="row col-sm-12">
 					<h2> 
 						MuDelta -
+						
 						<small> Input IOUs between people and hit Optimize to see the best way to resolve all IOUs. </small>
 					</h2>
 					<div>
