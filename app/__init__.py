@@ -1,5 +1,5 @@
-from collections import defaultdict
-from flask import Flask, redirect, jsonify, request
+from flask import Flask, jsonify, request, send_file
+
 from core.resolve_debts import resolve_debt, build_ledger_from_transactions, build_transactions_from_ledger
 
 app = Flask(__name__, static_url_path='/static', static_folder='./static')
@@ -16,4 +16,4 @@ def optimize():
 
 @app.route('/')
 def index():
-    return redirect('/static/index.html')
+    return send_file('./static/index.html')

@@ -1,24 +1,9 @@
-#!/usr/local/bin/python3
-
-from sys import stdout
 import random
 
-import yaml
-import click
 import names
 
 
-@click.command()
-@click.option('--num-transactions', '-t', default=None)
-@click.option('--num-nodes', '-n', default=5)
-@click.option('--min-amount', default=10)
-@click.option('--max-amount', default=100)
-def cli(
-    num_transactions,
-    num_nodes,
-    min_amount,
-    max_amount,
-):
+def generate_ledger(num_nodes, num_transactions, max_amount, min_amount):
     max_num_transactions = num_nodes * (num_nodes - 1)
     if num_transactions is None:
         num_transactions = 10
@@ -45,8 +30,4 @@ def cli(
         amount = random.randint(min_amount * 100, max_amount * 100) / 100
         # mark entry in ledger
         ledger[name_from][name_to] = amount
-    yaml.dump(ledger, stdout, default_flow_style=False)
-
-
-if __name__ == '__main__':
-    cli()
+    return ledger
