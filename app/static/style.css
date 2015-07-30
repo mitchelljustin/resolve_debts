@@ -2,12 +2,18 @@
 	border: solid 1px gray;
 	border-radius: 7px;
 	padding-bottom: 10px;
-	background-color: #FFFAFA;
+	background-color: #FFFCFC;
 }
 
 .transactions-container {
 	margin-bottom: 8px;
 	margin-top: 8px;
+}
+
+.transaction-remove-button {
+	cursor: pointer;
+	padding: 0px 15px;
+	color: black;
 }
 
 .ledger-actions {
@@ -18,7 +24,7 @@
 	border-right: none;
 	border-top: none;
 	border-bottom: 1px dashed gray;
-	background-color: #FFFDFD;
+	background-color: #FFFEFE;
 	text-align: center;
 	outline: none;
 	min-width: 50px;

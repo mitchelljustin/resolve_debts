@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mvanderh/resolve_debts#readme",
   "dependencies": {
+    "axios": "^0.5.4",
     "bootstrap": "^3.3.5",
     "coffee-reactify": "^4.0.0",
     "react": "^0.13.3"
