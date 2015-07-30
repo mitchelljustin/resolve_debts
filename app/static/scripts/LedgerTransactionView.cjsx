@@ -1,5 +1,8 @@
 module.exports =
 React.createClass
+	getDefaultProps: ->
+		static: false
+
 	componentWillMount: ->
 		@setState(transaction: @props.transaction)
 	componentWillReceiveProps: (newProps) ->
@@ -16,22 +19,39 @@ React.createClass
 
 	render: ->
 		<div>
-			<a className="transaction-remove-button" onClick={@onRemoveButtonClick}>
-				<i className="glyphicon glyphicon-minus" />
-			</a>	
+			{
+				if !@props.static then (
+					<a className="transaction-remove-button" onClick={@onRemoveButtonClick}>
+						<i className="glyphicon glyphicon-minus" />
+					</a>	
+				) else (
+					<a className="transaction-remove-button" onClick={@onRemoveButtonClick}>
+						<i className="glyphicon glyphicon-ok" />
+					</a>	
+				)
+			}
 			<input type="text" 
 				className="transaction-input" 
 				ref="debtorInput"
 				value={@state.transaction.debtor}
-				onChange={(e) => @onTransactionChanged('debtor', e)} />
+				placeholder="enter name"
+				onChange={(e) => @onTransactionChanged('debtor', e)} 
+				disabled={@props.static}
+				/>
 			 owes 
 			<input type="text" 
 				className="transaction-input" 
 				value={@state.transaction.creditor}
-				onChange={(e) => @onTransactionChanged('creditor', e)} />
+				placeholder="enter name"
+				onChange={(e) => @onTransactionChanged('creditor', e)} 
+				disabled={@props.static}
+				/>
        an amount of 
       <input type="text" 
       	className="transaction-input" 
       	value={@state.transaction.amount}
-      	onChange={(e) => @onTransactionChanged('amount', e)} />
+      	placeholder="enter amount"
+      	disabled={@props.static}
+      	onChange={(e) => @onTransactionChanged('amount', e)} 
+      	/>
 		</div>

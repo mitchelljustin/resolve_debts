@@ -65,7 +65,7 @@ def build_transactions_from_ledger(ledger: dict):
             tx = dict(
                 debtor=debtor,
                 creditor=creditor,
-                amount=amount
+                amount="{:.02f}".format(amount)
             )
             transactions.append(tx)
     return transactions
