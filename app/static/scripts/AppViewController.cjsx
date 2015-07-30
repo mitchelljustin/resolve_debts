@@ -3,8 +3,6 @@ LedgerEditorViewController = require './LedgerEditorViewController.cjsx'
 module.exports = 
 React.createClass
 	onLedgerSubmit: (ledgerObj) ->
-		console.log "sending ledger to server"
-		console.log ledgerObj
 		axios
 			.post('/optimize', ledgerObj)
 			.then((responseObj) =>
@@ -16,6 +14,9 @@ React.createClass
 		<div className="container">
 			<div className="row col-sm-12">
 				<h3 className="text-center"> MuDelta </h3>
+				<p> 
+					Enter debts between people and then hit Optimize to run the transaction optimizer!
+				</p>
 				<div>
 					<LedgerEditorViewController
 						ref="ledgerEditor"
