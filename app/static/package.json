@@ -20,6 +20,7 @@
     "axios": "^0.5.4",
     "bootstrap": "^3.3.5",
     "coffee-reactify": "^4.0.0",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-typeahead": "^1.1.2"
   }
 }

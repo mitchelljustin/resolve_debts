@@ -5,7 +5,6 @@ React.createClass
 	getInitialState: ->
 		return {
 				transactions: [
-					@makeEmptyTransaction(),
 					@makeEmptyTransaction()
 				]
 		}
@@ -14,11 +13,6 @@ React.createClass
 		creditor: ''
 		amount: 0
 	}
-	collectTransactions: ->
-		for index in [0...@state.transactions.length]
-			transactionView = @refs["transactionView#{index}"]
-			@state.transactions[index] = transactionView.getTransactionObj()
-		@forceUpdate()
 	setTransactions: (transactions) ->
 		@setState(transactions: transactions)
 
@@ -27,20 +21,22 @@ React.createClass
 		@state.transactions.push(newTransaction)
 		@forceUpdate()
 	onOptimizeClick: ->
-		@collectTransactions()
 		@props.onLedgerSubmit(@state.transactions)
 	onResetClick: ->
 		@setState(@getInitialState())
 	onTransactionDelete: (index) ->
 		@state.transactions.splice(index, 1)
 		@forceUpdate()
+	onTransactionChanged: (transaction, index) ->
+		@state.transactions[index] = transaction
+		@forceUpdate()
 
 	render: ->
 		transactionViews = @state.transactions.map((transaction, index) =>
 			<LedgerTransactionView 
-				transactionObj={transaction}
+				transaction={transaction}
 				onDelete={=> @onTransactionDelete(index)}
-				ref={"transactionView#{index}"}
+				onTransactionChanged={(newTx) => @onTransactionChanged(newTx, index)}
 				key={index} />
 		)
 		return (

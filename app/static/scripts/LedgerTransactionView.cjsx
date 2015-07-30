@@ -1,28 +1,19 @@
 module.exports =
 React.createClass
-	mixins: [React.addons.LinkedStateMixin]
-	getInitialState: ->
-		debtor: ''
-		creditor: ''
-		amount: 0
+	componentWillMount: ->
+		@setState(transaction: @props.transaction)
 	componentWillReceiveProps: (newProps) ->
-		@setTransactionObj(newProps.transactionObj)
+		@setState(transaction: newProps.transaction)
+
 	onRemoveButtonClick: ->
 		@props.onDelete()
-	focus: ->
-		React.findDOMNode(@refs.debtorInput).focus()
-	getTransactionObj: ->
-		return {
-			debtor: @state.debtor
-			creditor: @state.creditor
-			amount: parseFloat(@state.amount)
-		}
-	setTransactionObj: (transactionObj) ->
-		@setState(
-			debtor: transactionObj['debtor']
-			creditor: transactionObj['creditor']
-			amount: transactionObj['amount'].toFixed(2)
-		)
+	onTransactionChanged: (key, e) ->
+		transaction = @state.transaction
+		newValue = e.target.value
+		transaction[key] = newValue
+		@setState(transaction: transaction)
+		@props.onTransactionChanged(@state.transaction)
+
 	render: ->
 		<div>
 			<a className="transaction-remove-button" onClick={@onRemoveButtonClick}>
@@ -31,15 +22,16 @@ React.createClass
 			<input type="text" 
 				className="transaction-input" 
 				ref="debtorInput"
-				valueLink={@linkState('debtor')} />
+				value={@state.transaction.debtor}
+				onChange={(e) => @onTransactionChanged('debtor', e)} />
 			 owes 
 			<input type="text" 
 				className="transaction-input" 
-				valueLink={@linkState('creditor')} />
-       an amount of $
+				value={@state.transaction.creditor}
+				onChange={(e) => @onTransactionChanged('creditor', e)} />
+       an amount of 
       <input type="text" 
       	className="transaction-input" 
-      	id="amountInput" 
-      	placeholder="Amount" 
-      	valueLink={@linkState('amount')} />
+      	value={@state.transaction.amount}
+      	onChange={(e) => @onTransactionChanged('amount', e)} />
 		</div>

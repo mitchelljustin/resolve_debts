@@ -1,11 +1,11 @@
 #!/usr/local/bin/python3
 
 from sys import stdout
-from math import factorial
+import random
+
 import yaml
 import click
 import names
-import random
 
 
 @click.command()
