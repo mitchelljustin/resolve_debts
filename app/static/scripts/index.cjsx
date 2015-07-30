@@ -1,4 +1,4 @@
-AppViewController = require './AppViewController.coffee'
+AppViewController = require './AppViewController.cjsx'
 
 React.render(
   <AppViewController />,

@@ -1,0 +1,26 @@
+.ledger-container {
+	border: solid 1px gray;
+	border-radius: 7px;
+	padding-bottom: 10px;
+	background-color: #FFFAFA;
+}
+
+.transactions-container {
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+.ledger-actions {
+}
+
+.transaction-input {
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: 1px dashed gray;
+	background-color: #FFFDFD;
+	text-align: center;
+	outline: none;
+	min-width: 50px;
+	max-width: 400px;
+}
