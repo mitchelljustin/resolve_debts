@@ -1,4 +1,5 @@
 #!/usr/local/bin/python3
+from collections import defaultdict
 
 from sys import stdin
 from heapq import *
@@ -31,7 +32,7 @@ def generate_min_transactions(graph):
     nodes = [
         (data['balance'], node)
         for node, data in graph.nodes_iter(data=True)
-    ]
+        ]
     total_tx_amount = sum(
         bal for bal, _ in nodes
         if bal > 0
@@ -54,6 +55,39 @@ def generate_min_transactions(graph):
         heappush(debtors, (-debtor_bal, debtor_node))
 
 
+def build_ledger_from_graph(graph):
+    ledger = defaultdict(lambda: dict())
+    for debtor, creditor, data in graph.edges_iter(data=True):
+        amount = data['amount'] / 100
+        ledger[debtor][creditor] = amount
+        ledger[creditor]
+    return ledger
+
+
+def build_transactions_from_ledger(ledger: dict):
+    transactions = []
+    for debtor, debts in ledger.items():
+        for creditor, amount in debts.items():
+            tx = dict(
+                debtor=debtor,
+                creditor=creditor,
+                amount=amount
+            )
+            transactions.append(tx)
+    return transactions
+
+
+def build_ledger_from_transactions(transactions: list):
+    ledger = defaultdict(lambda: dict())
+    for tx in transactions:
+        creditor = tx['creditor']
+        debtor = tx['debtor']
+        amount = tx['amount']
+        ledger[debtor][creditor] = amount
+        ledger[creditor]
+    return ledger
+
+
 def resolve_debt(ledger: dict):
     graph = nx.DiGraph()
     # read ledger and generate graph
@@ -62,7 +96,9 @@ def resolve_debt(ledger: dict):
     execute_transactions(graph)
     # generate least-churn transaction edges
     generate_min_transactions(graph)
-    return graph
+    # generate new ledger from graph
+    optimized_ledger = build_ledger_from_graph(graph)
+    return optimized_ledger
 
 
 @click.command()
