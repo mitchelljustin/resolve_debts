@@ -1,21 +1,17 @@
 # Resolve Debts
 Be the last one out to get this dough? No way
 
+App is hosted at https://mudelta.herokuapp.com
+
 ## Installation
+### Command line
 ````bash
-pip3 install -r requirements.txt
+pip3 install -r core/requirements.txt
+./core/cli.py --help
 ````
 
-## Usage
-
-#### Generate Ledger
-
+### Web app
 ````bash
-python3 generate_ledger.py > someledger.yml
-````
-
-#### Resolve Debts
-
-````bash
-python3 resolve_debts.py -f someledger.yml --draw
+pip3 install -r core/requirements.txt
+./run_server.py
 ````
