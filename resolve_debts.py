@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
 from sys import stdin
-
 from heapq import *
+
 import yaml
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -28,11 +28,31 @@ def execute_transactions(graph):
 
 
 def generate_min_transactions(graph):
+    nodes = [
+        (data['balance'], node)
+        for node, data in graph.nodes_iter(data=True)
+    ]
     total_tx_amount = sum(
-        data['balance'] for _, data in graph.nodes_iter(data=True)
-        if data['balance'] > 0
+        bal for bal, _ in nodes
+        if bal > 0
     )
-    pass
+    creditors = [(-bal, node) for bal, node in nodes if bal > 0]
+    debtors = [(bal, node) for bal, node in nodes if bal < 0]
+    heapify(creditors)
+    heapify(debtors)
+    while total_tx_amount > 0:
+        creditor_bal, creditor_node = heappop(creditors)
+        debtor_bal, debtor_node = heappop(debtors)
+        creditor_bal *= -1
+        debtor_bal *= -1
+        tx_amount = min(creditor_bal, debtor_bal)
+        creditor_bal -= tx_amount
+        debtor_bal -= tx_amount
+        total_tx_amount -= tx_amount
+        graph.add_edge(debtor_node, creditor_node, amount=tx_amount)
+        heappush(creditors, (-creditor_bal, creditor_node))
+        heappush(debtors, (-debtor_bal, debtor_node))
+
 
 def resolve_debt(ledger: dict):
     graph = nx.DiGraph()
@@ -78,7 +98,7 @@ def cli(
         edge_labels = {
             (u, v): "{:.02f}".format(attribs['amount'] / 100)
             for u, v, attribs in resolved_graph.edges_iter(data=True)
-        }
+            }
         nx.draw_networkx_edge_labels(
             resolved_graph,
             pos=pos,
@@ -88,11 +108,11 @@ def cli(
             node_labels = {
                 node: "{:.02f}".format(attribs['orig_balance'] / 100)
                 for node, attribs in resolved_graph.nodes_iter(data=True)
-            }
+                }
             elevated_pos = {
                 key: (x, y + 5 / 100)
                 for key, (x, y) in pos.items()
-            }
+                }
             nx.draw_networkx_labels(
                 resolved_graph,
                 pos=elevated_pos,
