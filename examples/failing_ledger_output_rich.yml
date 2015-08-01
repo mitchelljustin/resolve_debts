@@ -1,0 +1,22 @@
+Carl:
+  Balance: 67.3
+Christopher:
+  Balance: 27.93
+Frank:
+  Balance: 93.99
+Katie:
+  Balance: -36.07
+  Debts:
+    Robert: 36.07
+Robert:
+  Balance: 36.07
+Shawn:
+  Balance: -95.23
+  Debts:
+    Christopher: 1.24
+    Frank: 93.99
+Sylvia:
+  Balance: -93.99
+  Debts:
+    Carl: 67.3
+    Christopher: 26.69
