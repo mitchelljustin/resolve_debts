@@ -1,4 +1,5 @@
 from collections import defaultdict
+from core.helpers import format_amount
 from heapq import *
 
 import networkx as nx
@@ -56,13 +57,27 @@ def generate_min_transactions(graph):
     return new_graph
 
 
-def build_ledger_from_graph(graph):
-    ledger = defaultdict(lambda: dict())
-    for debtor, creditor, data in graph.edges_iter(data=True):
-        amount = data['amount'] / 100
-        ledger[debtor][creditor] = amount
-        ledger[creditor]
-    return ledger
+def build_ledger_from_graph(graph, basic=True):
+    if basic:
+        ledger = defaultdict(lambda: dict())
+        for debtor, creditor, data in graph.edges_iter(data=True):
+            amount = data['amount'] / 100
+            ledger[debtor][creditor] = amount
+            ledger[creditor]
+    else:
+        ledger = dict()
+        for creditor, data in graph.nodes_iter(data=True):
+            balance = data['orig_balance']
+            if balance == 0:
+                continue
+            creditor_ledger = dict()
+            creditor_ledger['BalanceBefore'] = balance / 100
+            creditor_ledger['Debts'] = {
+                debtor: data['amount'] / 100
+                for _, debtor, data in graph.out_edges_iter([creditor], data=True)
+            }
+            ledger[creditor] = creditor_ledger
+    return dict(ledger)
 
 
 def build_transactions_from_ledger(ledger: dict):
@@ -72,7 +87,7 @@ def build_transactions_from_ledger(ledger: dict):
             tx = dict(
                 debtor=debtor,
                 creditor=creditor,
-                amount="{:.02f}".format(amount)
+                amount=format_amount(amount)
             )
             transactions.append(tx)
     return transactions
@@ -89,7 +104,7 @@ def build_ledger_from_transactions(transactions: list):
     return ledger
 
 
-def optimize_debts_from_ledger(ledger: dict):
+def optimize_debts_from_ledger(ledger: dict, **kwargs):
     graph = nx.DiGraph()
     # read ledger and generate graph
     load_ledger_into_graph(graph, ledger)
@@ -98,5 +113,5 @@ def optimize_debts_from_ledger(ledger: dict):
     # generate least-churn transaction edges
     generated_graph = generate_min_transactions(applied_graph)
     # generate new ledger from graph
-    optimized_ledger = build_ledger_from_graph(generated_graph)
+    optimized_ledger = build_ledger_from_graph(generated_graph, **kwargs)
     return generated_graph, optimized_ledger
