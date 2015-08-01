@@ -7,7 +7,7 @@ App is hosted at https://mudelta.herokuapp.com
 ### Command line
 ````bash
 pip3 install -r core/requirements.txt
-./core/cli.py --help
+./cli.py --help
 ````
 
 ### Web app

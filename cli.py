@@ -1,12 +1,11 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python
 
 from sys import stdout, stdin
 import click
 import networkx as nx
-import matplotlib.pyplot as plt
 import yaml
 from core.generate_ledger import generate_ledger
-from core.resolve_debts import resolve_debt
+from core.resolve_debts import optimize_debts_from_ledger
 
 
 @click.group()
@@ -41,19 +40,20 @@ def optimize(
     if not yml_file:
         yml_file = stdin
     ledger = yaml.load(yml_file)
-    resolved_graph = resolve_debt(ledger)
-    print("resolution: {} transactions".format(resolved_graph.number_of_edges()))
-    for node, data in resolved_graph.nodes_iter(data=True):
+    optimized_graph, optimized_ledger = optimize_debts_from_ledger(ledger)
+    print("resolution: {} transactions".format(optimized_graph.number_of_edges()))
+    for node, data in optimized_graph.nodes_iter(data=True):
         balance = data['orig_balance']
         if balance == 0:
             continue
         print("{}: {:.02f}".format(node, balance / 100))
-        for _, recipient, data in resolved_graph.out_edges_iter([node], data=True):
+        for _, recipient, data in optimized_graph.out_edges_iter([node], data=True):
             print("  -> {}: {:.02f}".format(recipient, data['amount'] / 100))
     if draw:
-        pos = nx.spring_layout(resolved_graph)
+        import matplotlib.pyplot as plt
+        pos = nx.spring_layout(optimized_graph)
         nx.draw(
-            resolved_graph,
+            optimized_graph,
             pos=pos,
             node_color='white',
             node_size=3000,
@@ -61,24 +61,24 @@ def optimize(
         )
         edge_labels = {
             (u, v): "{:.02f}".format(attribs['amount'] / 100)
-            for u, v, attribs in resolved_graph.edges_iter(data=True)
+            for u, v, attribs in optimized_graph.edges_iter(data=True)
             }
         nx.draw_networkx_edge_labels(
-            resolved_graph,
+            optimized_graph,
             pos=pos,
             edge_labels=edge_labels
         )
         if show_balances:
             node_labels = {
                 node: "{:.02f}".format(attribs['orig_balance'] / 100)
-                for node, attribs in resolved_graph.nodes_iter(data=True)
+                for node, attribs in optimized_graph.nodes_iter(data=True)
                 }
             elevated_pos = {
                 key: (x, y + 5 / 100)
                 for key, (x, y) in pos.items()
                 }
             nx.draw_networkx_labels(
-                resolved_graph,
+                optimized_graph,
                 pos=elevated_pos,
                 labels=node_labels,
                 font_weight='bold'
