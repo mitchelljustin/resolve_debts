@@ -6,7 +6,7 @@ from core.helpers import format_amount
 import networkx as nx
 import yaml
 from core.generate_ledger import generate_ledger
-from core.resolve_debts import optimize_debts_from_ledger
+from core.optimize_debts import optimize_debts_from_ledger
 
 
 @click.group()

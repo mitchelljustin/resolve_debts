@@ -1,6 +1,6 @@
 from collections import defaultdict
 from core.helpers import format_amount
-from heapq import *
+from core import debt_matching
 
 import networkx as nx
 
@@ -30,30 +30,8 @@ def apply_transactions(graph):
 
 def generate_min_transactions(applied_graph, orig_graph):
     new_graph = nx.DiGraph(applied_graph)
-    nodes = [
-        (data['balance'], node)
-        for node, data in new_graph.nodes_iter(data=True)
-    ]
-    total_tx_amount = sum(
-        bal for bal, _ in nodes
-        if bal > 0
-    )
-    creditors = [(-bal, node) for bal, node in nodes if bal > 0]
-    debtors = [(bal, node) for bal, node in nodes if bal < 0]
-    heapify(creditors)
-    heapify(debtors)
-    while total_tx_amount > 0:
-        creditor_bal, creditor_node = heappop(creditors)
-        debtor_bal, debtor_node = heappop(debtors)
-        creditor_bal *= -1
-        debtor_bal *= -1
-        tx_amount = min(creditor_bal, debtor_bal)
-        creditor_bal -= tx_amount
-        debtor_bal -= tx_amount
-        total_tx_amount -= tx_amount
-        new_graph.add_edge(debtor_node, creditor_node, amount=tx_amount)
-        heappush(creditors, (-creditor_bal, creditor_node))
-        heappush(debtors, (-debtor_bal, debtor_node))
+    debt_matching.match_equal_balances(new_graph)
+    debt_matching.match_extremes(new_graph)
     return new_graph
 
 
@@ -108,7 +86,7 @@ def build_ledger_from_transactions(transactions: list):
         debtor = tx['debtor']
         amount = float(tx['amount'])
         ledger[debtor][creditor] = amount
-        ledger[creditor]
+        ledger[creditor] = ledger[creditor]
     return ledger
 
 

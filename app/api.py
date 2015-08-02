@@ -1,7 +1,7 @@
 from flask import jsonify, request
 
 from app import app
-from core.resolve_debts import optimize_debts_from_ledger, build_ledger_from_transactions, build_transactions_from_ledger
+from core.optimize_debts import optimize_debts_from_ledger, build_ledger_from_transactions, build_transactions_from_ledger
 
 
 @app.route('/optimize', methods=['POST'])
