@@ -84,7 +84,7 @@ def build_ledger_from_transactions(transactions: list):
     for tx in transactions:
         creditor = tx['creditor']
         debtor = tx['debtor']
-        amount = float(tx['amount'])
+        amount = float(tx['amount']) * 100
         ledger[debtor][creditor] = amount
         ledger[creditor] = ledger[creditor]
     return ledger
