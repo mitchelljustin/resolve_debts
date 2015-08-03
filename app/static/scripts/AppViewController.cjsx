@@ -74,6 +74,9 @@ React.createClass
 						transactions={@state.optimizedTransactions}
 						dateLastOptimized={@state.dateLastOptimized}
 						/>
+					<small>
+						written by <a href="https://github.com/mvanderh">Mitchell Van Der Hoeff</a>
+					</small>
 				</div>
 			</div>
 		)
