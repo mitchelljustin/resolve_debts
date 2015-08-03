@@ -10,10 +10,10 @@
 	margin-top: 8px;
 }
 
-.transaction-remove-button {
+.transaction-action-button {
 	cursor: pointer;
 	padding: 0px 15px;
-	color: black;
+	color: gray;
 }
 
 .ledger-actions {
@@ -25,6 +25,7 @@
 	border-top: none;
 	border-bottom: 1px dashed gray;
 	background-color: #FFFEFE;
+	color: #4D4D4D;
 	text-align: center;
 	outline: none;
 	min-width: 50px;

@@ -96,7 +96,7 @@ def optimize_debts_from_ledger(ledger: dict, **kwargs):
     load_ledger_into_graph(graph, ledger)
     # execute all transaction edges
     applied_graph = apply_transactions(graph)
-    # generate least-churn transaction edges
+    # generate least transaction edges
     generated_graph = generate_min_transactions(applied_graph, graph)
     # generate new ledger from graph
     optimized_ledger = build_ledger_from_graph(generated_graph, **kwargs)

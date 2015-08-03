@@ -1,57 +1,77 @@
+LedgerTransactionInput = require './LedgerTransactionInput.cjsx'
+
 module.exports =
 React.createClass
 	getDefaultProps: ->
 		static: false
 
-	componentWillMount: ->
-		@setState(transaction: @props.transaction)
+	componentDidMount: ->
+		@setState(transaction: @props.transaction, =>
+			React.findDOMNode(@refs.debtorInput).focus()
+		)
 	componentWillReceiveProps: (newProps) ->
 		@setState(transaction: newProps.transaction)
 
-	onRemoveButtonClick: ->
-		@props.onDelete()
-	onTransactionChanged: (key, e) ->
+	onActionButtonClick: ->
+		if @props.onAction? 
+			@props.onAction()
+	onDataEntered: (dataKey) ->
+		switch dataKey
+			when 'debtor'
+				@focusCreditorInput()
+			when 'creditor'
+				@focusAmountInput()
+			when 'amount'
+				@props.onTransactionEntered()
+	onDataChanged: (dataKey, newValue) ->
 		transaction = @state.transaction
-		newValue = e.target.value
-		transaction[key] = newValue
+		transaction[dataKey] = newValue
 		@setState(transaction: transaction)
 		@props.onTransactionChanged(@state.transaction)
+	onDataDeleted: (dataKey) ->
+		switch dataKey
+			when 'debtor'
+				@props.onTransactionDeleted()
+			when 'creditor'
+				@focusDebtorInput()
+			when 'amount'
+				@focusCreditorInput()
+
+	focusDebtorInput: ->
+		React.findDOMNode(@refs.debtorInput).focus()
+	focusCreditorInput: ->
+		React.findDOMNode(@refs.creditorInput).focus()
+	focusAmountInput: ->
+		React.findDOMNode(@refs.amountInput).focus()
+	makeTransactionInput: (dataKey, placeholder) -> (
+		<LedgerTransactionInput 
+			ref={"#{dataKey}Input"}
+			disabled={@props.static}
+			value={@props.transaction[dataKey]}
+			placeholder={placeholder}
+			dataKey={dataKey}
+			onDataChanged={@onDataChanged}
+			onDataEntered={@onDataEntered}
+			onDataDeleted={@onDataDeleted}
+			 />
+	)
 
 	render: ->
 		<div>
+			<a 
+				className="transaction-action-button" 
+				onClick={@onActionButtonClick}>
 			{
 				if !@props.static then (
-					<a className="transaction-remove-button" onClick={@onRemoveButtonClick}>
-						<i className="glyphicon glyphicon-minus" />
-					</a>	
+					<i className="glyphicon glyphicon-minus" />
 				) else (
-					<a className="transaction-remove-button" onClick={@onRemoveButtonClick}>
-						<i className="glyphicon glyphicon-ok" />
-					</a>	
+					<i className="glyphicon glyphicon-ok" />
 				)
 			}
-			<input type="text" 
-				className="transaction-input" 
-				ref="debtorInput"
-				value={@state.transaction.debtor}
-				placeholder="enter name"
-				onChange={(e) => @onTransactionChanged('debtor', e)} 
-				disabled={@props.static}
-				/>
-			 owes 
-			<input type="text" 
-				className="transaction-input" 
-				value={@state.transaction.creditor}
-				placeholder="enter name"
-				onChange={(e) => @onTransactionChanged('creditor', e)} 
-				disabled={@props.static}
-				/>
-       an amount of 
-      <input type="text" 
-      	className="transaction-input" 
-      	value={@state.transaction.amount}
-      	placeholder="enter amount"
-      	disabled={@props.static}
-      	onChange={(e) => @onTransactionChanged('amount', e)} 
-      	/>
+			</a>
+			{@makeTransactionInput('debtor', 'enter name')}
+			<span> owes </span>
+			{@makeTransactionInput('creditor', 'enter name')}
+			<span> an amount of </span>
+			{@makeTransactionInput('amount', 'enter amount')}
 		</div>

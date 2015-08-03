@@ -4,7 +4,7 @@ LedgerViewerViewController = require './LedgerViewerViewController.cjsx'
 module.exports = 
 React.createClass
 	getInitialState: ->
-		optimizedTransactions: null
+		optimizedTransactions: []
 		dateLastOptimized: null
 	onLedgerSubmit: (ledgerObj, completion) ->
 		axios
@@ -20,9 +20,13 @@ React.createClass
 			.catch((error) => 
 				completion()
 			)
+	onKeyUp: (e) ->
+		if e.ctrlKey and String.fromCharCode(e.keyCode) == 'R'
+			@refs.ledgerEditor.runOptimize()
+
 	render: ->
 		return (
-			<div className="container">
+			<div className="container" onKeyUp={@onKeyUp}>
 				<div className="row col-sm-12">
 					<h2> 
 						MuDelta -
@@ -31,16 +35,14 @@ React.createClass
 					</h2>
 					<div>
 						<LedgerEditorViewController
+							ref="ledgerEditor"
 							onLedgerSubmit={@onLedgerSubmit}
 							/>
 					</div>
-					{if @state.optimizedTransactions then (
-						<LedgerViewerViewController
-							transactions={@state.optimizedTransactions}
-							dateLastOptimized={@state.dateLastOptimized}
-							/>
-						)
-					}
+					<LedgerViewerViewController
+						transactions={@state.optimizedTransactions}
+						dateLastOptimized={@state.dateLastOptimized or null}
+						/>
 				</div>
 			</div>
 		)
