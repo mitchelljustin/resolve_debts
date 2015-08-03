@@ -29,11 +29,11 @@ React.createClass
 			@setState(isOptimizing: false)
 		@props.onLedgerSubmit(@state.transactions, completion)
 
-	onAddTransactionClick: ->
+	onAddTransaction: ->
 		@addEmptyTransaction()
-	onOptimizeClick: ->
+	onOptimize: ->
 		@runOptimize()
-	onResetClick: ->
+	onReset: ->
 		@setState(@getInitialState())
 	onTransactionAction: (index) ->
 		@removeTransactionAtIndex(index)
@@ -77,16 +77,10 @@ React.createClass
 					<div className="ledger-actions">
 						<h4 className="text-left">
 							Ledger 
+							<small>
+								{if @state.isOptimizing then "Optimizing.."}
+							</small>
 						</h4>
-						<button className="btn btn-default" onClick={@onAddTransactionClick}>
-							Add Transaction
-						</button>	
-						<button className="btn btn-default" onClick={@onResetClick}>
-							Reset
-						</button>	
-						<button className="btn btn-primary" onClick={@onOptimizeClick}>
-							{if @state.isOptimizing then "Optimizing.." else "Optimize!"}
-						</button>
 					</div>
 					<div className="transactions-container" ref="transactionsContainer">
 						{transactionViews}

@@ -36,7 +36,11 @@ React.createClass
 				@focusDebtorInput()
 			when 'amount'
 				@focusCreditorInput()
-
+	handleHotkey: (e) ->
+		if e.ctrlKey
+			switch String.fromCharCode(e.keyCode)
+				when 'S'
+					@props.onTransactionDeleted()
 	focusDebtorInput: ->
 		React.findDOMNode(@refs.debtorInput).focus()
 	focusCreditorInput: ->

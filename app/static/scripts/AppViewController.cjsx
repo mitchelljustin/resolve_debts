@@ -1,11 +1,17 @@
+hotkey = require 'react-hotkey'
+
+hotkey.activate()
+
 LedgerEditorViewController = require './LedgerEditorViewController.cjsx'
 LedgerViewerViewController = require './LedgerViewerViewController.cjsx'
 
 module.exports = 
 React.createClass
+	mixins: [hotkey.Mixin('handleHotkey')]
 	getInitialState: ->
 		optimizedTransactions: []
 		dateLastOptimized: null
+
 	onLedgerSubmit: (ledgerObj, completion) ->
 		axios
 			.post('/optimize', ledgerObj)
@@ -20,9 +26,24 @@ React.createClass
 			.catch((error) => 
 				completion()
 			)
-	onKeyUp: (e) ->
-		if e.ctrlKey and String.fromCharCode(e.keyCode) == 'R'
-			@refs.ledgerEditor.runOptimize()
+
+	handleHotkey: (e) ->
+		if e.ctrlKey 
+			switch String.fromCharCode(e.keyCode)
+				when 'R'
+					@refs.ledgerEditor.onOptimize()
+				when 'D'
+					@refs.ledgerEditor.onReset()
+				when 'A'
+					@refs.ledgerEditor.onAddTransaction()
+
+	onAddTransaction: ->
+		@refs.ledgerEditor.onAddTransaction()
+	onReset: ->
+		@refs.ledgerEditor.onReset()
+	onOptimize: ->
+		@refs.ledgerEditor.onOptimize()
+
 
 	render: ->
 		return (
@@ -33,15 +54,25 @@ React.createClass
 						
 						<small> Input IOUs between people and hit Optimize to see the best way to resolve all IOUs. </small>
 					</h2>
-					<div>
-						<LedgerEditorViewController
-							ref="ledgerEditor"
-							onLedgerSubmit={@onLedgerSubmit}
-							/>
-					</div>
+					<p>
+						Use Enter and Backspace to easily navigate around transactions.
+					</p>
+					<button className="btn btn-default" onClick={@onAddTransaction}>
+						Add Transaction (Ctrl-A)
+					</button>	
+					<button className="btn btn-default" onClick={@onReset}>
+						Reset (Ctrl-D)
+					</button>	
+					<button className="btn btn-primary" onClick={@onOptimize}>
+						Optimize! (Ctrl-R)
+					</button>
+					<LedgerEditorViewController
+						ref="ledgerEditor"
+						onLedgerSubmit={@onLedgerSubmit}
+						/>
 					<LedgerViewerViewController
 						transactions={@state.optimizedTransactions}
-						dateLastOptimized={@state.dateLastOptimized or null}
+						dateLastOptimized={@state.dateLastOptimized}
 						/>
 				</div>
 			</div>
